@@ -4,19 +4,19 @@
 
 ## Start a Live Activity with Push Notificaitons 
 
-open [apnspush](https://apnpush.com), Send push notifications as the following image.
+open [apnspush](https://apnspush.com), Send push notifications as the following image.
 
 ![start-live-activity-with-push](https://image.apnspush.com/start-live-activity-with-push.png)
 
 ## Update a Live Activity with Push Notificaitons 
 
-open [apnspush](https://apnpush.com), Send push notifications as the following image.
+open [apnspush](https://apnspush.com), Send push notifications as the following image.
 
 
 ![update-live-activity-with-push](https://image.apnspush.com/update-live-activity-with-push.png)
 
 ## End a Live Activity with Push Notificaitons 
 
-open [apnspush](https://apnpush.com), Send push notifications as the following image.
+open [apnspush](https://apnspush.com), Send push notifications as the following image.
 
 ![end-live-activity-with-push](https://image.apnspush.com/end-live-activity-with-push.png)
