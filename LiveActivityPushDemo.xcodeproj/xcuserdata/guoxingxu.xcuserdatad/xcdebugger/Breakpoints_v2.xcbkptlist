@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F9F65381-7460-4C90-B3BD-41F6735676AE"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "980415EB-74AA-48C5-B9DF-E66D65B06B36"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LiveActivityPushDemo/LiveActivityManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getPushToStartToken()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "980415EB-74AA-48C5-B9DF-E66D65B06B36 - ea67fddbe6a9f471"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in LiveActivityPushDemo.LiveActivityManager.getPushToStartToken() -&gt; ()"
+                  moduleName = "LiveActivityPushDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guoxingxu/Code/APNsPushDemo/LiveActivityPushDemo/LiveActivityPushDemo/LiveActivityManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "980415EB-74AA-48C5-B9DF-E66D65B06B36 - c6174a1257607774"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in LiveActivityPushDemo.LiveActivityManager.getPushToStartToken() -&gt; ()"
+                  moduleName = "LiveActivityPushDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guoxingxu/Code/APNsPushDemo/LiveActivityPushDemo/LiveActivityPushDemo/LiveActivityManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "980415EB-74AA-48C5-B9DF-E66D65B06B36 - e0cb3362ab72b07f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in LiveActivityPushDemo.LiveActivityManager.getPushToStartToken() -&gt; ()"
+                  moduleName = "LiveActivityPushDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guoxingxu/Code/APNsPushDemo/LiveActivityPushDemo/LiveActivityPushDemo/LiveActivityManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86179CAD-1CE7-43B4-B043-F19500C9462E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LiveActivityPushDemo/LiveActivityPushDemoApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "86179CAD-1CE7-43B4-B043-F19500C9462E - 5641d59116dc4905"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiveActivityPushDemo.AppDelegate.applicationDidFinishLaunching(__C.UIApplication) -&gt; ()"
+                  moduleName = "LiveActivityPushDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guoxingxu/Code/APNsPushDemo/LiveActivityPushDemo/LiveActivityPushDemo/LiveActivityPushDemoApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "86179CAD-1CE7-43B4-B043-F19500C9462E - e83b19e60d28cd0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiveActivityPushDemo.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "LiveActivityPushDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guoxingxu/Code/APNsPushDemo/LiveActivityPushDemo/LiveActivityPushDemo/LiveActivityPushDemoApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
