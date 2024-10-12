@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8058E1552CB9291B0043B2C5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8058E1542CB9291B0043B2C5 /* Logger.swift */; };
 		809638DA2B68D935003F5CB8 /* LiveActivityPushDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809638D92B68D935003F5CB8 /* LiveActivityPushDemoApp.swift */; };
 		809638DC2B68D935003F5CB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809638DB2B68D935003F5CB8 /* ContentView.swift */; };
 		809638DE2B68D936003F5CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 809638DD2B68D936003F5CB8 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8058E1542CB9291B0043B2C5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		809638D62B68D935003F5CB8 /* LiveActivityPushDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveActivityPushDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		809638D92B68D935003F5CB8 /* LiveActivityPushDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityPushDemoApp.swift; sourceTree = "<group>"; };
 		809638DB2B68D935003F5CB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				809638D92B68D935003F5CB8 /* LiveActivityPushDemoApp.swift */,
 				809639042B68DB55003F5CB8 /* LiveActivityManager.swift */,
 				809638DB2B68D935003F5CB8 /* ContentView.swift */,
+				8058E1542CB9291B0043B2C5 /* Logger.swift */,
 				809638DD2B68D936003F5CB8 /* Assets.xcassets */,
 				809638DF2B68D936003F5CB8 /* Preview Content */,
 			);
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8058E1552CB9291B0043B2C5 /* Logger.swift in Sources */,
 				809638DC2B68D935003F5CB8 /* ContentView.swift in Sources */,
 				809638DA2B68D935003F5CB8 /* LiveActivityPushDemoApp.swift in Sources */,
 				809639052B68DB55003F5CB8 /* LiveActivityManager.swift in Sources */,

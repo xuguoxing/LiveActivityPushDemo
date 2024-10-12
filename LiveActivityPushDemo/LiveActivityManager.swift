@@ -26,8 +26,9 @@ class LiveActivityManager: NSObject, ObservableObject {
             Task {
                 for await data in Activity<LiveActivityAttributes>.pushToStartTokenUpdates {
                     let token = data.map {String(format: "%02x", $0)}.joined()
-                            print("Activity PushToStart Token: \(token)")
-                            //send this token to your notification server
+                        print("Activity PushToStart Token: \(token)")
+                        Logger.liveactivity.info("Activity PushToStart Token: \(token, privacy: .public)")
+                        //send this token to your notification server
                     }
             }
         }
@@ -42,9 +43,10 @@ class LiveActivityManager: NSObject, ObservableObject {
         do {
             let atttribute = LiveActivityAttributes(name:"APNsPush")
             let initialState = LiveActivityAttributes.ContentState(emoji: "😇")
+            let staleDate = Date(timeIntervalSinceNow: 10)
             let activity = try Activity<LiveActivityAttributes>.request(
                 attributes: atttribute,
-                content: .init(state:initialState , staleDate: nil),
+                content: .init(state:initialState , staleDate: staleDate),
                 pushType: .token
             )
             self.currentActivity = activity
@@ -58,11 +60,13 @@ class LiveActivityManager: NSObject, ObservableObject {
                         $0 + String(format: "%02x", $1)
                     }
                     print("Activity:\(activity.id) push token: \(pushTokenString)")
+                    Logger.liveactivity.info("Activity:\(activity.id,privacy: .public) push token: \(pushTokenString,privacy: .public)")
                     //send this token to your notification server
                 }
             }
         } catch {
             print("start Activity From App:\(error)")
+            Logger.liveactivity.info("start Activity From App:\(error,privacy: .public)")
         }
     }
     
@@ -106,6 +110,24 @@ class LiveActivityManager: NSObject, ObservableObject {
             guard let activity = currentActivity else {
                 return
             }
+            let finalState = LiveActivityAttributes.ContentState(emoji: "✋✋")
+            let dismissalPolicy: ActivityUIDismissalPolicy
+            if let dismissTimeInterval = dismissTimeInterval {
+                if dismissTimeInterval <= 0 {
+                    dismissalPolicy = .immediate
+                } else {
+                    dismissalPolicy = .after(.now + dismissTimeInterval)
+                }
+            } else {
+                dismissalPolicy = .default
+            }
+            
+            await activity.end(ActivityContent(state: finalState, staleDate: nil), dismissalPolicy: dismissalPolicy)
+        }
+    }
+    
+    static func endActivity(activity:Activity<LiveActivityAttributes>, dismissTimeInterval: Double?) {
+        Task {
             let finalState = LiveActivityAttributes.ContentState(emoji: "✋✋")
             let dismissalPolicy: ActivityUIDismissalPolicy
             if let dismissTimeInterval = dismissTimeInterval {

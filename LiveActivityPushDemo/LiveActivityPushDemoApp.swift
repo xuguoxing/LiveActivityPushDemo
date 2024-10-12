@@ -7,12 +7,13 @@
 
 import SwiftUI
 import ActivityKit
+import OSLog
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         LiveActivityManager.shared.getPushToStartToken()
-        observeActivityPushToken()
+        observeActivityPushTokenAndState()
         return true
     }
     
@@ -23,16 +24,29 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    func observeActivityPushToken() {
+    func observeActivityPushTokenAndState() {
         Task {
-            for await activityData in Activity<LiveActivityAttributes>.activityUpdates {
+            for await activity in Activity<LiveActivityAttributes>.activityUpdates {
                 Task {
-                    for await tokenData in activityData.pushTokenUpdates {
+                    for await tokenData in activity.pushTokenUpdates {
                         let token = tokenData.map {String(format: "%02x", $0)}.joined()
-                        print("Activity:\(activityData.id) Push token: \(token)")
+                        print("Observer Activity:\(activity.id) Push token: \(token)")
+                        Logger.liveactivity.info("Observer Activity:\(activity.id, privacy: .public) Push token: \(token,privacy: .public)")
                         //send this token to your notification server
                     }
                 }
+                
+                Task {
+                    for await state in activity.activityStateUpdates {
+                        print("Observer Activity:\(activity.id) state:\(state)")
+                        let stateLog = "Observer Activity:\(activity.id) state:\(state)"
+                        Logger.liveactivity.info("\(stateLog,privacy: .public)")
+                        if state == .stale {
+                            LiveActivityManager.endActivity(activity: activity, dismissTimeInterval: 0)
+                        }
+                    }
+                }
+                
             }
         }
     }
