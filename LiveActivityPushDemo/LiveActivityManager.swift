@@ -31,10 +31,22 @@ class LiveActivityManager: NSObject, ObservableObject {
                         //send this token to your notification server
                     }
             }
+        
         }
     }
+    
+    func startLiveActivityWithToken() {
+        startActivityWith(pushType: .token)
+    }
+    
+    func startLiveActivityWithChannel(channelId: String) {
+        if #available(iOS 18.0, *){
+            startActivityWith(pushType: .channel(channelId))
+        }
+    }
+    
    
-    func startActivity() {
+    func startActivityWith(pushType: PushType) {
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {
             print("You can't start live activity.")
             return
@@ -47,11 +59,11 @@ class LiveActivityManager: NSObject, ObservableObject {
             let activity = try Activity<LiveActivityAttributes>.request(
                 attributes: atttribute,
                 content: .init(state:initialState , staleDate: staleDate),
-                pushType: .token
+                pushType: pushType
             )
             self.currentActivity = activity
             
-            let pushToken = activity.pushToken // Returns nil.
+//            let pushToken = activity.pushToken // Returns nil.
 
             Task {
                 
@@ -69,7 +81,7 @@ class LiveActivityManager: NSObject, ObservableObject {
             Logger.liveactivity.info("start Activity From App:\(error,privacy: .public)")
         }
     }
-    
+        
     func updateActivity(delay:Double, alert:Bool) {
         // register background task
         var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid

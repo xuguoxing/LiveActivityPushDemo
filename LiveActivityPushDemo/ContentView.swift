@@ -15,10 +15,17 @@ struct ContentView: View {
 //                .foregroundStyle(.tint)
 //            Text("Hello, world!")
             
+            
             Button(action: {
-                LiveActivityManager.shared.startActivity()
+                LiveActivityManager.shared.startLiveActivityWithToken()
             }, label: {
-                Text("Start Activity")
+                Text("Start Activity - Push Type: .token")
+            })
+            
+            Button(action: {
+                LiveActivityManager.shared.startLiveActivityWithChannel(channelId: "CTrNsYq/Ee8AALLzHQaVlA==")
+            }, label: {
+                Text("Start Activity - Push Type: .channel")
             })
             
             Button(action: {
